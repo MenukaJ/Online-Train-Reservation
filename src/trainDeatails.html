@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>train Deatail</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/script.js"></script>
+    <style>
+      hr{
+        height: 10px;
+        color: white;
+      }
+      .searchTrain{
+        width: 100%;
+        background: rgb(223, 223, 223);
+        padding: 10px;
+        position: absolute;
+      }
+      .searchTrain input{
+        width: 50%;
+        height: 30  px;
+        border-radius: 10px;
+        padding: 5px;
+        border: solid blue 2px;
+      }
+      .searchTrain button{
+        background: blue;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+        width: 100px;
+        border-radius: 10px;
+      }
+      .searchTrain p{
+        color: red;
+        font-size: 12px;
+      } 
+      .button{
+        background: blue;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+        width: 80%;
+        border-radius: 10px;
+      }
+      .filter{
+        width: 15%;
+        height: auto;
+        text-align: center;
+        padding: 15px;
+        background: rgb(223, 223, 223);
+        border-radius: 10px;
+        margin-left: 1%;
+        border: solid rgb(0, 0, 0) 2px;
+        position: relative;
+        margin-top: 2%;
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+      .filter select{
+        margin: 10px;
+        padding: 5px;
+        width: 80%;
+        background: white;
+        border-radius: 8px;
+      }
+      .filter input{
+        margin: 10px;
+        padding: 5px;
+      }
+      .tDetails{
+        height: 100px;
+        width: 85%;
+        float: right ;
+        align-content: center;
+        color: gray;
+        margin-top: 90px;
+        padding: 15px;
+        text-align: center;
+      }
+      .tDetails table{
+        box-shadow: 1.5px 2px 1.5px 2px rgb(104, 170, 245);
+        padding: 15px;
+        border-radius: 10px;
+        width: 80%;
+      }
+      .tDetails th, .tDetails td{
+        border-right: solid black 2px;
+      }
+      #tD{
+        
+      }
+      #tb1{
+        
+      }
+      .trainList{
+        width: 15%;
+        height: auto;
+        padding: 15px;
+        box-shadow: 2px 2px 2px 2px rgb(194, 194, 194);
+        border-radius: 10px;
+        margin-left: 1%;
+        color: gray;
+        position: relative;
+        margin-top: 2%;
+        margin-bottom: 10px;
+        font-size: 15px;
+      }
+      .trainList ul{
+        margin-left: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="fix">
+    <header>
+            <ul>
+                <li class="bookme"><a href="#"><i class="fa fa-train" style="font-size:30px;color: white;"></i></a></li>
+                <li class="bookme"><a href="index.html"><h3>BOOKme</h3></a></li>
+                <li class="header"><a href="#">ABOUT US </a></li>
+                <li class="header"><a href="#">CONTACT US |</a></li>
+                <li class="header"><a href="#">JOIN |</a></li>
+                <li class="header"><a href="#">SIGN IN |</a></li>
+            </ul>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="trainDeatails.html"><i class="fa fa-train" style="font-size:36px;"></i><br/>Train Details</a></li>
+            <li><a href="#"><i class="fa fa-calendar" style="font-size:36px;"></i><br/>Schedule</a></li>
+            <li><a href="#"><i class="fa fa-university" style="font-size:36px;"></i><br/>Station</a></li>
+            <li><a href="#"><i class="fa fa-cart-arrow-down" style="font-size:40px;"></i><br/>Cargo</a></li>       
+        </ul>
+        <button type="button" onclick="window.location.href = 'searchTicket.html';">BOOK NOW</button>
+    </nav>
+    <main>
+      <hr/>
+      <center>
+      <div class="searchTrain">
+          <input type="search" value="" id="sTrain"  placeholder="enter train code or name" title="enter train code or name">
+          <button type="submit" onclick="searchTrain()">Search</button>
+          <p id="error"></p>
+      </div>
+      </center>
+      <div class="tDetails" id="tD" hidden>
+        <center>
+          <table id="tb1">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Type</th>
+              <th>A/C or Non-Ac</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </center>
+      </div>
+    
+      <div class="filter">
+        <h3>Filter Results</h3>
+        <form action="" method="GET" onsubmit="filterTrain()">
+          <select name="" id="" required title="select train type">
+            <option value="" disabled selected>select train type</option>
+            <option value="E">Express</option>
+            <option value="N">Normal</option>
+            <option value=""></option>
+          </select><br/>
+          <select name="" id="" aria-placeholder="select one" required title="select train class">
+            <option value="" disabled selected>select train class</option>
+            <option value="A">Class A</option>
+            <option value="B">Class B</option>
+            <option value="C">Class C</option>
+          </select>
+          <input type="radio" name="AC" id="1">
+          <label>AC</label>
+          <input type="radio" name="AC" id="2">
+          <label>NON-AC</label> <br/>
+          <input type="submit" value="Filter" class="button">
+        </form>
+      </div>
+      <div class="trainList">
+        <h3>Train List</h3>
+        <ul>
+          <li>Ruhunu Kumari</li>
+          <li>Udarata Menike</li>
+          <li>Yal Dewi</li>
+          <li>Galu Kumari</li>
+          <li>Uththara Devi</li>
+          <li>Siyana Kumari</li>
+          <li>Rajarata Regina</li>
+          <li>Podi Menike</li>
+          <li>Senkadagala Menike</li>
+          <li>Udaya Dewi</li>
+          <li>Shagarika</li>
+          <li>Samudra Devi</li>
+        </ul>
+      </div>
+      
+    </main>
+    <footer>
+      <div id="col1">
+          <h3>FOLLOW US</h3>
+          <ul class="col1">
+            <li><a href="#"><i class="fa fa-facebook" style="font-size:30px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus" style="font-size:30px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" style="font-size:30px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" style="font-size:30px;"></i></a></li>
+          </ul>
+      </div>
+      <div id="col2">
+          <h3>How To</h3>
+          <ul class="col2">
+            <li><a href="#">Refund Condition</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+      </div>
+      <div id="col3">
+          <h3>Payment Method</h3>
+          <ul class="col3">
+            <li><i class="fa fa-paypal" style="font-size:18px;"></i></li>
+            <li><i class="fa fa-credit-card" style="font-size:18px;"></i></li>
+            <li><i class="fa fa-cc-mastercard" style="font-size: 18px;"></i></li>
+            <li><i class="fa fa-cc-visa" style="font-size: 18px;"></i></li>
+          </ul>
+      </div>
+      <div id="col4">
+          <h3>Support</h3>
+          <ul class="col4">
+            <li><i class="fa fa-envelope"></i>bookme@gmail.com</li>
+            <li><i class="fa fa-phone"></i>011 255666</li>
+            <li><i class="fa fa-fax"></i>011565545</li>
+            <li><i class="fa fa-map-marker"></i></li> 
+          </ul>
+      </div>
+      <div class="end">@2019 group project</div>
+    </footer>
+</body>
+</html>

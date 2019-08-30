@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome Admin Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        header{
+            box-shadow: 2px 2px 2px 2px rgb(121, 168, 255);
+            font-size: 20px;
+        }
+        main{
+            margin-top: 5%;
+        }
+        .adminLog{
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 4px 2px 4px rgb(194, 194, 194);
+            width: 35%;
+            height: auto;
+        }
+        .adminLog input{
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            border: solid blue 1.5px;
+        }
+        .adminLog #bt1{
+            background-color: rgb(11, 165, 11);
+            color: white;
+            border: solid rgb(5, 54, 0) 2px;
+            font-weight: bolder;
+            font-size: 15px;
+        }
+        .adminLog a{
+            text-decoration: none;
+            color: blue;
+            float: left;
+            margin-left: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li class="bookme"><i class="fa fa-train" style="font-size:30px;color: rgb(255, 255, 255);"></i></li>
+            <li class="bookme"><a href="index.html"><h3>BOOKme</h3></a></li>
+        </ul>
+    </header>
+    <main>
+    <center>
+        <i class="fa fa-user" style="font-size:100px;color: blue;"></i>
+        <div class="adminLog">
+                <h1>Admin Login</h1>
+                <form action="dashbord.html" method="POST" onsubmit="adminLog()">
+                    <input type="text" required placeholder="enter user name"><br/>
+                    <input type="password" name="" id="" required placeholder="enter password"><br/>
+                    <input type="submit" value="Login" id="bt1">
+                </form>
+                <a href="">Forgot password</a><br/>
+        </div>
+    </center>
+    </main>
+</body>
+</html>
